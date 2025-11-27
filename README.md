@@ -94,7 +94,7 @@ Choose how TwinSync talks to you:
 
 1. Open HACS → Integrations
 2. Click ⋮ → Custom repositories
-3. Add `https://github.com/kozzzzzzy/cleanme` as Integration
+3. Add `https://github.com/kozzzzzzy/twin-sync-spot` as Integration
 4. Download and restart Home Assistant
 
 ### Manual
