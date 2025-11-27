@@ -1,0 +1,69 @@
+check:
+  name: Check spot
+  description: Take a camera snapshot and compare to the spot's Ready State definition.
+  fields:
+    spot:
+      name: Spot
+      description: The name of the spot to check.
+      required: true
+      example: "My Work Desk"
+      selector:
+        text:
+
+reset:
+  name: Reset spot
+  description: Mark the spot as fixed. Clears the "to sort" list and updates the streak.
+  fields:
+    spot:
+      name: Spot
+      description: The name of the spot to reset.
+      required: true
+      example: "My Work Desk"
+      selector:
+        text:
+
+snooze:
+  name: Snooze spot
+  description: Pause automatic checks and hide from "needs attention" for a duration.
+  fields:
+    spot:
+      name: Spot
+      description: The name of the spot to snooze.
+      required: true
+      example: "My Work Desk"
+      selector:
+        text:
+    duration_minutes:
+      name: Duration (minutes)
+      description: How long to snooze (1-1440 minutes, max 24 hours).
+      required: true
+      example: 60
+      selector:
+        number:
+          min: 1
+          max: 1440
+          unit_of_measurement: minutes
+
+unsnooze:
+  name: Unsnooze spot
+  description: Cancel snooze and re-enable checks for a spot.
+  fields:
+    spot:
+      name: Spot
+      description: The name of the spot to unsnooze.
+      required: true
+      example: "My Work Desk"
+      selector:
+        text:
+
+check_all:
+  name: Check all spots
+  description: Run a check on all configured spots at once.
+
+regenerate_dashboard:
+  name: Regenerate dashboard
+  description: Regenerate the TwinSync Spot dashboard YAML file.
+
+export_basic_dashboard:
+  name: Export basic dashboard
+  description: Export a basic dashboard using only standard Home Assistant cards.

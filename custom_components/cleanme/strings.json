@@ -1,0 +1,53 @@
+{
+  "title": "TwinSync Spot",
+  "config": {
+    "step": {
+      "user": {
+        "title": "TwinSync Spot – Add Spot (1/2)",
+        "description": "Define a spot you want to track. A spot is a specific location that should match your Ready State.",
+        "data": {
+          "name": "Spot name (e.g., My Work Desk)",
+          "camera_entity": "Camera to use for checking",
+          "spot_type": "What kind of spot is this?",
+          "voice": "How should updates sound?"
+        }
+      },
+      "definition": {
+        "title": "TwinSync Spot – Define Ready State (2/2)",
+        "description": "Describe what \"{spot_name}\" looks like when it's ready. Be specific about what should and shouldn't be there.",
+        "data": {
+          "definition": "Your definition of Ready State",
+          "check_frequency": "How often to auto-check",
+          "api_key": "Gemini API key",
+          "custom_voice_prompt": "Custom voice instructions (optional)"
+        }
+      }
+    },
+    "error": {
+      "unknown": "Something went wrong. Check the logs.",
+      "invalid_api_key": "Invalid Gemini API key. Please check and try again."
+    },
+    "abort": {
+      "already_configured": "This spot is already configured.",
+      "reconfigure_successful": "Spot updated successfully."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "TwinSync Spot – Edit Spot",
+        "description": "Update settings for this spot.",
+        "data": {
+          "name": "Spot name",
+          "camera_entity": "Camera entity",
+          "spot_type": "Spot type",
+          "voice": "Voice style",
+          "definition": "Ready State definition",
+          "check_frequency": "Check frequency",
+          "api_key": "Gemini API key",
+          "custom_voice_prompt": "Custom voice prompt"
+        }
+      }
+    }
+  }
+}
