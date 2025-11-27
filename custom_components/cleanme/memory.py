@@ -276,7 +276,7 @@ class MemoryManager:
                 from datetime import time
 
                 t = time(hour=most_common_hour)
-                memory.patterns.usually_sorted_by = t.strftime("%-I:%M %p")
+                memory.patterns.usually_sorted_by = t.strftime("%I:%M %p").lstrip("0")
 
         # Calculate current streak (consecutive days ending sorted)
         # Group checks by date, take last status of each day
@@ -300,8 +300,8 @@ class MemoryManager:
                 else:
                     break
             else:
-                # No check that day - don't break streak, just skip
-                continue
+                # No check that day - break streak (user didn't check)
+                break
 
         memory.patterns.current_streak = streak
         if streak > memory.patterns.longest_streak:
